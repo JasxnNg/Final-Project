@@ -1,5 +1,4 @@
 # Final-Project
-	My final project for APCS A 
 
 	Name: Jason Ng
 	Username: JasxnNg 
