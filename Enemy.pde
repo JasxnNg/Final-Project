@@ -1,1 +1,3 @@
-public class Enemy extends Spaceship{}
+public class Enemy extends Spaceship{
+
+}
