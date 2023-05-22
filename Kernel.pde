@@ -1,5 +1,5 @@
 public class Kernel {
-  float[][]kernel;
+  private float[][]kernel;
 
   public Kernel(float[][]init) {
     kernel = init; 
