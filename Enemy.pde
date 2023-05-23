@@ -7,7 +7,7 @@ public class Enemy extends Spaceship{
    
    void update() {
      super.update();
-     //collision mechanics will be in my driver class 
+     //collision mechanics will be in my spaceship class 
    }
    
 
