@@ -1,21 +1,18 @@
 public class Spaceship {
   private PVector position; 
-  private PVector velocity; 
+  public PVector velocity; 
   
-  public Spaceship (float posx, float posy, float intivx, float intivy) {
+  public Spaceship (float posx, float posy, float vx, float vy) {
     position = new PVector (posx, posy); 
-    velocity = new PVector (intivx, intivy); 
+    velocity = new PVector (vx, vy); 
   }
   void update (){
-    position.add(velocity); 
+    position.add(velocity.copy()); 
   }
   boolean checkCollision(Spaceship another) { 
     return (this.position.equals(another.position));  // which one should I kill? 
   }
   
-  void changeVelocity (PVector velocity){
-    this.velocity = velocity; 
-   }
   
   public float getX (){
     return position.x;  
@@ -23,5 +20,10 @@ public class Spaceship {
   public float getY(){
     return position.y; 
   }
+  
+  public void updatePosY(float posit){
+    this.position.y += posit; }
+  public void updatePosX(float posit){
+    this.position.x+= posit;}
 
 }

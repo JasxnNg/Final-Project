@@ -3,17 +3,32 @@ Kernel blur = new Kernel (new float[][] {
       {.125, .250, .125},
       {.08, .125, .08}
     }); 
-int speed = 1; //temp
+int speed = 20; //temp
 int score = 0; 
-int size = 40; 
+int size = 40; // size of each pixel 
 int w, h; 
 int border = h/2; 
-boolean freeMove = false; 
 int stage = 0; 
+int highScore; 
+
+ArrayList<Enemy> enemies; 
+ArrayList<Projectile> projectiles; 
+Projectile bull; 
+Player play; 
+
 
 void setup() {
   size (1920, 1280);
-  background (255); 
+  w = width/size; 
+  h = height/size; 
+  noStroke(); 
+  enemies = new ArrayList<Enemy>(); 
+  projectiles = new ArrayList<Projectile>(); 
+  for (int x = 1; x < 12; x++) 
+    for (int y = 1; y < 5; y++) 
+      enemies.add (new Enemy (x * size + 80 * x, y * size + 40 * y)); 
+  play = new Player(1000, 1000); 
+  highScore = 0; 
 }
 
 void draw() { 
@@ -29,6 +44,7 @@ void draw() {
 }
 
 void back(){ 
+  background(255); 
   PImage original = loadImage("zidane.png"); 
   PImage processedbackground = original.copy();
   blur.apply(original,processedbackground); 
@@ -45,7 +61,33 @@ void back(){
   text("Defeat the busted code!", 75, 1200);  
 }
 void game (){
+  
   background(0); 
+  PFont font = createFont("AFont.otf", 50);
+  textFont(font); 
+  fill(255); 
+  text ("Score " + score, 300, 50); 
+  text("Lives " + play.getLives(), 700, 50); 
+  text ("High Score " + highScore, 1000, 50); 
+  text("Press Enter to shoot. Use arrow keys for movement", 300, 1200); 
+  
+  for (int i = 0; i < enemies.size(); i++){ 
+      enemies.get(i).show(); 
+      
+      enemies.get(i).update();} 
+      
+  for (int i = 0; i < projectiles.size(); i++) {
+      projectiles.get(i).show(); 
+      projectiles.get(i).update(); 
+      if (projectiles.get(i).getY() > height) 
+        projectiles.remove (i); 
+  }
+  play.show(); 
+  play.update(); 
+  if (bull != null) {
+    bull.show(); 
+    bull.update(); }
+  
   // setup the actual game 
 }
 void keyPressed(){
@@ -59,7 +101,9 @@ void victory () {
   font = createFont("AFont.otf", 128);
   
 }
-void lose() {} 
+void lose() {} {
+} 
 void gameOver() {
   setup(); 
+  stage = 0; 
 }
