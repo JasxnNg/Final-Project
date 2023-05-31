@@ -1,9 +1,9 @@
 
-int chance = 2000; 
-Projectile b;   
 public class Enemy extends Spaceship{
-  public int life; 
-   
+  private int chanceOfShot = 2000;  
+  private int life; 
+  private Projectile b;  
+  
    public Enemy (int xpos, int ypos) {
      super(xpos, ypos, size/16, 0); 
      life = 2; 
@@ -11,7 +11,7 @@ public class Enemy extends Spaceship{
    
    void update() {
     super.update();
-    if(random(0, chance) < 1){
+    if(random(0, chanceOfShot) < 1){
       shoot();
     }    
     if(this.getX() > width || this.getX() < 0){

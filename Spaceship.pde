@@ -6,11 +6,8 @@ public class Spaceship {
     position = new PVector (posx, posy); 
     velocity = new PVector (vx, vy); 
   }
-  void update (){
+  public void update (){
     position.add(velocity.copy()); 
-  }
-  boolean checkCollision(Spaceship another) { 
-    return (this.position.equals(another.position));  // which one should I kill? 
   }
   
   

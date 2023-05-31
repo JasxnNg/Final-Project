@@ -25,6 +25,8 @@ void update(){
             lives--; 
           
    }
+  if (lives <= 0) 
+    gameOver(); 
 
   }
 }

@@ -3,13 +3,11 @@ Kernel blur = new Kernel (new float[][] {
       {.125, .250, .125},
       {.08, .125, .08}
     }); 
-int speed = 20; //temp
-int score = 0; 
+int score; 
 int size = 40; // size of each pixel 
 int w, h; 
-int border = h/2; 
 int stage = 0; 
-int highScore; 
+int highScore = 0; 
 
 ArrayList<Enemy> enemies; 
 ArrayList<Projectile> projectiles; 
@@ -28,7 +26,7 @@ void setup() {
     for (int y = 1; y < 5; y++) 
       enemies.add (new Enemy (x * size + 80 * x, y * size + 40 * y)); 
   play = new Player(1000, 1000); 
-  highScore = 0; 
+  score = 0; 
 }
 
 void draw() { 
@@ -39,7 +37,7 @@ void draw() {
   else if (stage == 2 ) 
     victory(); 
   else if (stage == 3) 
-    lose(); 
+    gameOver();  
   keyPressed(); 
 }
 
@@ -69,7 +67,7 @@ void game (){
   text ("Score " + score, 300, 50); 
   text("Lives " + play.getLives(), 700, 50); 
   text ("High Score " + highScore, 1000, 50); 
-  text("Press Enter to shoot. Use arrow keys for movement", 300, 1200); 
+  text("Press Space to shoot. Use arrow keys for movement", 300, 1200); 
   
   for (int i = 0; i < enemies.size(); i++){ 
       enemies.get(i).show(); 
@@ -79,7 +77,7 @@ void game (){
   for (int i = 0; i < projectiles.size(); i++) {
       projectiles.get(i).show(); 
       projectiles.get(i).update(); 
-      if (projectiles.get(i).getY() > height) 
+      if (projectiles.get(i).getY() > height - 200) 
         projectiles.remove (i); 
   }
   play.show(); 
@@ -101,8 +99,7 @@ void victory () {
   font = createFont("AFont.otf", 128);
   
 }
-void lose() {} {
-} 
+
 void gameOver() {
   setup(); 
   stage = 0; 
