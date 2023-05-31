@@ -84,7 +84,9 @@ void game (){
   play.update(); 
   if (bull != null) {
     bull.show(); 
-    bull.update(); }
+    bull.update();}
+  if (highScore < score) 
+    highScore = score; 
   
   // setup the actual game 
 }

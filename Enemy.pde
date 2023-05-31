@@ -1,4 +1,5 @@
 
+
 public class Enemy extends Spaceship{
   private int chanceOfShot = 2000;  
   private int life; 
@@ -27,7 +28,7 @@ public class Enemy extends Spaceship{
     for (int i = 0; i < enemies.size(); i++) {
       if (bull != null && 
           Math.abs(bull.getX() - enemies.get(i).getX()) < size + 3 
-          && Math.abs(bull.getY() - enemies.get(i).getY())< size + 3){
+          && Math.abs(bull.getY() - enemies.get(i).getY())< size){
        bull = null; 
        enemies.get(i).life--;  
        if (enemies.get(i).life < 1) 

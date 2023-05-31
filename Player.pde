@@ -19,8 +19,8 @@ void update(){
     bull = null; 
    for (int i = 0; i < projectiles.size(); i++) {
      if (projectiles.get(i) != null && // just in case! 
-         Math.abs(projectiles.get(i).getX() - play.getX()) < size - 5
-         && Math.abs(projectiles.get(i).getY() - play.getY())< size - 5){
+         Math.abs(projectiles.get(i).getX() - play.getX()) < size - 3
+         && Math.abs(projectiles.get(i).getY() - play.getY())< size - 3){
             projectiles.remove(i);
             lives--; 
           
