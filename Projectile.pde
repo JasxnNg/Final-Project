@@ -6,11 +6,14 @@ public class Projectile extends Spaceship {
       this.col = col;  
 }
     public Projectile (Player ply) {// should have the player/ ply
-      super (ply.getX(), ply.getY(), 0, -1 * size /2);
+      super (ply.getX() + 20, ply.getY() - 20, 0, -1 * size /2);
       col = color (23, 149, 232); //moving upward
   }
+  public void update() {
+    super.update();
+    show(); }
 
     public void show() {
       fill (col); 
-      rect(this.getX(), this.getY(), 10, size); }
+      rect(this.getX(), this.getY(), 10, size /2); }
 }

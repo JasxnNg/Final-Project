@@ -3,7 +3,17 @@
 public class Enemy extends Spaceship{
   private int chanceOfShot = 2000;  
   private int life; 
-  private Projectile b;  
+  private Projectile b; 
+  private int[][] sprite = new int[][] {
+       {1,0,0,0,0,0,0,0,0,0,1},
+       {0,1,0,0,0,0,0,0,0,1,0},
+       {0,0,1,1,1,1,1,1,1,0,0},
+       {0,1,1,0,1,1,1,0,1,1,0},
+       {1,0,1,1,1,1,1,1,1,0,1},
+       {1,0,1,1,1,1,1,1,1,0,1},
+       {1,0,1,0,0,0,0,0,1,0,1},
+       {0,0,1,1,0,0,0,1,1,0,0}
+  }; 
   
    public Enemy (int xpos, int ypos) {
      super(xpos, ypos, size/16, 0); 
@@ -15,7 +25,7 @@ public class Enemy extends Spaceship{
     if(random(0, chanceOfShot) < 1){
       shoot();
     }    
-    if(this.getX() > width || this.getX() < 0){
+    if(this.getX() > width - 4 * size || this.getX() < 2 * size){
       for(Enemy i: enemies){
         i.velocity.x *= -1;
         i.updatePosY(size/2);
@@ -31,10 +41,13 @@ public class Enemy extends Spaceship{
           && Math.abs(bull.getY() - enemies.get(i).getY())< size){
        bull = null; 
        enemies.get(i).life--;  
+       score += 10; //gets 10 points if you shoot 
        if (enemies.get(i).life < 1) 
          die(enemies.get(i)); 
        }
         }
+     fill (80, 255, 80);
+     super.show(this.getX(), this.getY(), sprite); 
   }
      
   
@@ -42,15 +55,13 @@ public class Enemy extends Spaceship{
    void shoot(){
      b = new Projectile(this.getX(), this.getY(), color (163, 31, 2)); 
      projectiles.add(b); }
-     
-    void show () {
-      fill (255); 
-      ellipse(this.getX(), this.getY(), size, size * 1.1); }
+    
     
     void die(Enemy i ){
       
       enemies.remove(i);
-      score += 10; }
+      score += 40; //gets fifty total if they die  
+    }
    
 
 }

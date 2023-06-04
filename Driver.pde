@@ -24,9 +24,9 @@ void setup() {
   projectiles = new ArrayList<Projectile>(); 
   for (int x = 1; x < 12; x++) 
     for (int y = 1; y < 5; y++) 
-      enemies.add (new Enemy (x * size + 80 * x, y * size + 40 * y)); 
+      enemies.add (new Enemy (x * size + 100 * x, y * size + 40 * y)); 
   play = new Player(1000, 1000); 
-  score = 0; 
+  score = 0;  
 }
 
 void draw() { 
@@ -68,19 +68,16 @@ void game (){
   text("Lives " + play.getLives(), 700, 50); 
   text ("High Score " + highScore, 1000, 50); 
   text("Press Space to shoot. Use arrow keys for movement", 300, 1200); 
-  
-  for (int i = 0; i < enemies.size(); i++){ 
-      enemies.get(i).show(); 
-      
+  if (enemies.size() == 0)
+    stage = 2; 
+  for (int i = 0; i < enemies.size(); i++){  
       enemies.get(i).update();} 
       
-  for (int i = 0; i < projectiles.size(); i++) {
-      projectiles.get(i).show(); 
+  for (int i = 0; i < projectiles.size(); i++) { 
       projectiles.get(i).update(); 
-      if (projectiles.get(i).getY() > height - 200) 
+      if (projectiles.get(i).getY() > height - 200) // garbage collection ? 
         projectiles.remove (i); 
   }
-  play.show(); 
   play.update(); 
   if (bull != null) {
     bull.show(); 
@@ -93,16 +90,36 @@ void game (){
 void keyPressed(){
   if (key== 'x' || key == 'X') 
     stage = 1; 
+  if (key == 'w' || key == 'W') {
+    stage = 0;
+    setup();
+  }
+  if (key == 'q' || key == 'Q') {
+    stage = 2; 
+  }
   
 }
 void victory () {
   PImage original = loadImage("zidane.png"); 
   PFont font;
   font = createFont("AFont.otf", 128);
+  background(0); 
+  textSize(100);
+  fill(0, 255, 0); 
+  text("Hooray! You defeated the code!", width/2 - 500, height/2); 
   
 }
 
-void gameOver() {
-  setup(); 
-  stage = 0; 
+void gameOver() { 
+  PFont font = createFont("AFont.otf", 128); 
+  textFont(font); 
+  background (0); 
+  fill (0, 255, 0); 
+  textSize(100); 
+  text ("Game Over. The code took over.", width/2 - 500, height/2 - 150); 
+  textSize ( 50); 
+  text("Press W to start again", width/2 - 150, height/2); 
+   text ("Score " + score, width/2 - 75, height / 2 + 100); 
+  text ("High Score " + highScore, width/2 - 75, height / 2 + 150);
+  
 }

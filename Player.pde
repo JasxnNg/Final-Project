@@ -1,7 +1,15 @@
-
-
 public class Player extends Spaceship{
-  private int lives = 3; 
+  private int lives = 3;
+  int[][] sprite = new int[][] {
+       {0,0,0,0,1,0,0,0,0},
+       {0,0,0,0,1,0,0,0,0},
+       {0,1,0,1,1,1,0,1,0},
+       {1,1,1,1,1,1,1,1,1},
+       {0,1,1,1,1,1,1,1,0},
+       {0,0,1,1,1,1,1,0,0},
+       {1,0,0,0,1,0,0,0,1}
+  }; 
+  
   public Player (float posx, float posy) {
       super( posx, posy, 0, 0); }
 
@@ -26,9 +34,11 @@ void update(){
           
    }
   if (lives <= 0) 
-    gameOver(); 
+    stage = 3; // gameOver
 
   }
+  fill (255); 
+  super.show(play.getX(), play.getY(), sprite); 
 }
   
 void keyPressed(){
@@ -46,10 +56,7 @@ void keyPressed(){
   int getLives() {
     return lives; }
     
-  void show() {
-      fill (255); 
-      ellipse(this.getX(), this.getY(), size, size * 1.1); 
-  }
+
   void shoot(){
     if (bull == null) 
       bull = new Projectile (this); 
