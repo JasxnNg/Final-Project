@@ -1,6 +1,6 @@
 public class Spaceship {
   private PVector position; 
-  public PVector velocity; 
+  private PVector velocity; 
   
   public Spaceship (float posx, float posy, float vx, float vy) {
     position = new PVector (posx, posy); 
@@ -22,11 +22,14 @@ public class Spaceship {
     this.position.y += posit; }
   public void updatePosX(float posit){
     this.position.x+= posit;}
+    public void updateVelocityX(float posit){
+    this.velocity.x *= posit; }
+
     
-  public void show (float x, float y, int[][] sprite){
-      for (int i = 0; i < sprite.length; i ++ ) { 
-        for (int j = 0; j < sprite[i].length; j++){
-          if (sprite[i][j] == 1){
+  public void show (float x, float y, int[][] model){
+      for (int i = 0; i < model.length; i ++ ) { 
+        for (int j = 0; j < model[i].length; j++){
+          if (model[i][j] == 1){
             float newX = x + j * 5;
             float newY = y + i * 5;
             rect(newX, newY, 5, 5); 

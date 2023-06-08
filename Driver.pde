@@ -12,7 +12,6 @@ ArrayList<Enemy> enemies;
 ArrayList<Projectile> projectiles; 
 Projectile bull; 
 Player play; 
-boolean change = true; 
 
 
 void setup() {
@@ -73,7 +72,7 @@ void game (){
     for(Enemy i: enemies){  // bad fix for the problem where when I check things 
       if(i.getX() > width - 4 * size || i.getX() < 2 * size && change){
       for(Enemy j: enemies){
-        j.velocity.x *= -1;
+        j.updateVelocityX(-1);
         j.updatePosY(size /3); // little scuffed, but it's all aligned now! 
        }
        break; 
@@ -132,3 +131,13 @@ void gameOver() {
   text ("High Score " + highScore, width/2 - 75, height / 2 + 150);
   
 }
+//SoundFile fire;
+//SoundFile beat;
+//SoundFile playerHit;
+//SoundFile enemyHit;
+//import processing.sound.*;
+//beat = new SoundFile(this,   "beat.wav");
+// fire = new SoundFile(this, "fire.wav");
+// playerHit = new SoundFile(this,   "playerhit.wav");
+// enemyHit = new SoundFile(this, "enemyhit.wav");
+//beat.play();

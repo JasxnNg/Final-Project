@@ -5,7 +5,7 @@ public class Enemy extends Spaceship{
   private int life; 
   private Projectile b; 
   // this sprite is unique to the enemy class! 
-  private int[][][] sprite = new int[][][]  {
+  private int[][][] model = new int[][][]  {
     
     
     {
@@ -54,9 +54,9 @@ public class Enemy extends Spaceship{
       gameOver();
     }
     //collision mechanics for this here 
-    for (int i = 0; i < enemies.size(); i++) {
+    for (int i = 0; i < enemies.size(); i++) { // cannot use enhanced for-loop 
       if (bull != null && 
-          Math.abs(bull.getX() - enemies.get(i).getX()) < size + 3 
+          Math.abs(bull.getX() - enemies.get(i).getX()) < size  // its like a sphere for collisions 
           && Math.abs(bull.getY() - enemies.get(i).getY())< size){
        bull = null; 
        enemies.get(i).life--;  
@@ -69,9 +69,9 @@ public class Enemy extends Spaceship{
         }
      fill (80, 255, 80);
      if (this.life == 2) 
-       super.show(this.getX(), this.getY(), sprite[0]); 
+       super.show(this.getX(), this.getY(), model[0]); 
      else if (this.life == 1) 
-       super.show(this.getX(), this.getY(), sprite[1]); 
+       super.show(this.getX(), this.getY(), model[1]); 
   }
      
   

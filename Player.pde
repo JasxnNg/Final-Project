@@ -3,7 +3,7 @@
 public class Player extends Spaceship{
   private int lives = 3;
   //this sprite is unique to the Spaceship class
-    int[][][] sprite = new int[][][] {{
+    int[][][] model = new int[][][] {{
        {0,0,0,0,1,0,0,0,0},
        {0,0,0,0,1,0,0,0,0},
        {0,1,0,1,1,1,0,1,0},
@@ -61,11 +61,11 @@ void update(){
   }
   fill (255); 
   if (lives == 3) 
-    super.show(play.getX(), play.getY(), sprite[0]); 
+    super.show(play.getX(), play.getY(), model[0]); 
   else if (lives == 2)
-    super.show(play.getX(), play.getY(), sprite[1]); 
+    super.show(play.getX(), play.getY(), model[1]); 
   else if (lives == 1)
-    super.show(play.getX(), play.getY(), sprite[2]); 
+    super.show(play.getX(), play.getY(), model[2]); 
 }
   
 void keyPressed(){
