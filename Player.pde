@@ -1,6 +1,9 @@
+
+
 public class Player extends Spaceship{
   private int lives = 3;
-  int[][] sprite = new int[][] {
+  //this sprite is unique to the Spaceship class
+    int[][][] sprite = new int[][][] {{
        {0,0,0,0,1,0,0,0,0},
        {0,0,0,0,1,0,0,0,0},
        {0,1,0,1,1,1,0,1,0},
@@ -8,6 +11,25 @@ public class Player extends Spaceship{
        {0,1,1,1,1,1,1,1,0},
        {0,0,1,1,1,1,1,0,0},
        {1,0,0,0,1,0,0,0,1}
+  },
+  {
+       {0,0,0,0,1,0,0,0,0},
+       {0,0,0,0,1,0,0,0,0},
+       {0,1,0,1,0,1,0,1,0},
+       {1,0,1,1,1,1,0,1,1},
+       {0,0,1,1,1,1,1,1,0},
+       {0,0,1,1,1,1,1,0,0},
+       {1,0,0,0,1,0,0,0,1}
+  }, 
+  {
+       {0,0,0,0,1,0,0,0,0},
+       {0,0,0,0,1,0,0,0,0},
+       {0,1,0,0,0,1,0,1,0},
+       {1,0,1,0,1,1,0,1,1},
+       {0,0,0,1,1,1,0,1,0},
+       {0,0,1,1,1,1,1,0,0},
+       {1,0,0,0,1,0,0,0,1}
+  }
   }; 
   
   public Player (float posx, float posy) {
@@ -38,7 +60,12 @@ void update(){
 
   }
   fill (255); 
-  super.show(play.getX(), play.getY(), sprite); 
+  if (lives == 3) 
+    super.show(play.getX(), play.getY(), sprite[0]); 
+  else if (lives == 2)
+    super.show(play.getX(), play.getY(), sprite[1]); 
+  else if (lives == 1)
+    super.show(play.getX(), play.getY(), sprite[2]); 
 }
   
 void keyPressed(){

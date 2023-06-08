@@ -5,7 +5,6 @@ Kernel blur = new Kernel (new float[][] {
     }); 
 int score; 
 int size = 40; // size of each pixel 
-int w, h; 
 int stage = 0; 
 int highScore = 0; 
 
@@ -13,12 +12,11 @@ ArrayList<Enemy> enemies;
 ArrayList<Projectile> projectiles; 
 Projectile bull; 
 Player play; 
+boolean change = true; 
 
 
 void setup() {
-  size (1920, 1280);
-  w = width/size; 
-  h = height/size; 
+  size (1920, 1280); 
   noStroke(); 
   enemies = new ArrayList<Enemy>(); 
   projectiles = new ArrayList<Projectile>(); 
@@ -71,7 +69,17 @@ void game (){
   if (enemies.size() == 0)
     stage = 2; 
   for (int i = 0; i < enemies.size(); i++){  
-      enemies.get(i).update();} 
+      enemies.get(i).update();} //changes size of array so can't use enhanced for  
+    for(Enemy i: enemies){  // bad fix for the problem where when I check things 
+      if(i.getX() > width - 4 * size || i.getX() < 2 * size && change){
+      for(Enemy j: enemies){
+        j.velocity.x *= -1;
+        j.updatePosY(size /3); // little scuffed, but it's all aligned now! 
+       }
+       break; 
+    }
+      } 
+     change = true; 
       
   for (int i = 0; i < projectiles.size(); i++) { 
       projectiles.get(i).update(); 
@@ -79,8 +87,7 @@ void game (){
         projectiles.remove (i); 
   }
   play.update(); 
-  if (bull != null) {
-    bull.show(); 
+  if (bull != null) { 
     bull.update();}
   if (highScore < score) 
     highScore = score; 
@@ -107,6 +114,8 @@ void victory () {
   textSize(100);
   fill(0, 255, 0); 
   text("Hooray! You defeated the code!", width/2 - 500, height/2); 
+  textSize(50);
+  text("Press W to start again", width/2 - 150, height/2 + 100); 
   
 }
 
