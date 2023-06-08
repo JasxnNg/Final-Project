@@ -1,3 +1,9 @@
+import processing.sound.*; 
+
+SoundFile projectileLaunch;
+SoundFile playerCollision;
+SoundFile enemyCollision;
+
 Kernel blur = new Kernel (new float[][] {
       {.08, .125, .08},
       {.125, .250, .125},
@@ -14,9 +20,13 @@ Projectile bull;
 Player play; 
 
 
+
 void setup() {
   size (1920, 1280); 
   noStroke(); 
+  projectileLaunch = new SoundFile(this, "projectileLaunch.wav");
+  playerCollision = new SoundFile(this,   "playerCollision.wav");
+  enemyCollision = new SoundFile(this, "enemyCollision.wav");
   enemies = new ArrayList<Enemy>(); 
   projectiles = new ArrayList<Projectile>(); 
   for (int x = 1; x < 12; x++) 
@@ -70,7 +80,7 @@ void game (){
   for (int i = 0; i < enemies.size(); i++){  
       enemies.get(i).update();} //changes size of array so can't use enhanced for  
     for(Enemy i: enemies){  // bad fix for the problem where when I check things 
-      if(i.getX() > width - 4 * size || i.getX() < 2 * size && change){
+      if(i.getX() > width - 4 * size || i.getX() < 2 * size){
       for(Enemy j: enemies){
         j.updateVelocityX(-1);
         j.updatePosY(size /3); // little scuffed, but it's all aligned now! 
@@ -78,7 +88,6 @@ void game (){
        break; 
     }
       } 
-     change = true; 
       
   for (int i = 0; i < projectiles.size(); i++) { 
       projectiles.get(i).update(); 

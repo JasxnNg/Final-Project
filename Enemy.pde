@@ -61,6 +61,7 @@ public class Enemy extends Spaceship{
        bull = null; 
        enemies.get(i).life--;  
        score += 10; //gets 10 points if you shoot 
+       enemyCollision.play(); 
        if (enemies.get(i).life < 1) 
          die(enemies.get(i)); 
        }

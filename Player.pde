@@ -47,12 +47,13 @@ void update(){
 //  }  //reset the PVector
   if (bull != null && bull.getY() < 0 ) 
     bull = null; 
-   for (int i = 0; i < projectiles.size(); i++) {
+   for (int i = 0; i < projectiles.size(); i++) { 
      if (projectiles.get(i) != null && // just in case! 
-         Math.abs(projectiles.get(i).getX() - play.getX()) < size - 3
+         Math.abs(projectiles.get(i).getX() - play.getX()) < size - 3 // makes it easier for us
          && Math.abs(projectiles.get(i).getY() - play.getY())< size - 3){
             projectiles.remove(i);
             lives--; 
+            playerCollision.play(); 
           
    }
   if (lives <= 0) 
@@ -76,6 +77,7 @@ void keyPressed(){
     if (keyPressed && keyCode == 32) {
        //     Projectile.add(new Projectile(this.getX(), this.getY()));
             shoot(); 
+            projectileLaunch.play(); 
   }
 
 }
