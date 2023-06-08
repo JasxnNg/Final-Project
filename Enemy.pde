@@ -56,8 +56,8 @@ public class Enemy extends Spaceship{
     //collision mechanics for this here 
     for (int i = 0; i < enemies.size(); i++) { // cannot use enhanced for-loop 
       if (bull != null && 
-          Math.abs(bull.getX() - enemies.get(i).getX()) < size  // its like a sphere for collisions 
-          && Math.abs(bull.getY() - enemies.get(i).getY())< size){
+          Math.abs(bull.getX() - enemies.get(i).getX()) < size   // its like a sphere for collisions 
+          && Math.abs(bull.getY() - enemies.get(i).getY())< size  ){
        bull = null; 
        enemies.get(i).life--;  
        score += 10; //gets 10 points if you shoot 

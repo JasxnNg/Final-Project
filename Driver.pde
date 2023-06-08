@@ -140,13 +140,3 @@ void gameOver() {
   text ("High Score " + highScore, width/2 - 75, height / 2 + 150);
   
 }
-//SoundFile fire;
-//SoundFile beat;
-//SoundFile playerHit;
-//SoundFile enemyHit;
-//import processing.sound.*;
-//beat = new SoundFile(this,   "beat.wav");
-// fire = new SoundFile(this, "fire.wav");
-// playerHit = new SoundFile(this,   "playerhit.wav");
-// enemyHit = new SoundFile(this, "enemyhit.wav");
-//beat.play();
