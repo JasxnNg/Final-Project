@@ -1,35 +1,35 @@
-<mxfile host="app.diagrams.net" modified="2023-06-04T22:43:52.998Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36" etag="YERvpO-Aed06vnE-ivqM" version="21.3.6" type="github">
+<mxfile host="app.diagrams.net" modified="2023-06-09T08:00:32.863Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/114.0.0.0 Safari/537.36" etag="TZtSy4xQtLQmkv7qqMbI" version="21.3.7" type="github">
   <diagram name="Page-1" id="e7e014a7-5840-1c2e-5031-d8a46d1fe8dd">
-    <mxGraphModel dx="1221" dy="743" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="none" math="0" shadow="0">
+    <mxGraphModel dx="376" dy="733" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1654" pageHeight="1169" background="none" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
         <mxCell id="Bj3Egmkld3hF2YVUXplE-41" value="Driver" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="32" y="24" width="190" height="30" as="geometry" />
+          <mxGeometry x="25" y="24" width="197" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-42" value="&lt;div&gt;&amp;nbsp;+int size;&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+int w, h;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+int stage;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+int highScore;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ArrayList&amp;lt;Enemy&amp;gt; enemies;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ArrayList&amp;lt;Projectile&amp;gt; projectiles;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+Projectile bull;&amp;nbsp;&lt;/div&gt;&amp;nbsp;+Player play;&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="32" y="54" width="190" height="126" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-42" value="&lt;div&gt;&amp;nbsp;+ projectileLaunch : SoundFile&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ playerCollision : SoundFile&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ enemyCollision : SoundFile&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ blur : Kernel&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ score : int&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ highScore : int&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ size : int&amp;nbsp;&amp;nbsp;&lt;/div&gt;&lt;div&gt;&amp;nbsp;+ stage : int&amp;nbsp;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;+ currentDiff : int&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;+ enemies : ArrayList&amp;lt;Enemy&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;+ projectiles : ArrayList&amp;lt;Projectile&amp;gt;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;+ bull : Projectile&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;+ difficulty : String [ ]&amp;nbsp;&lt;/span&gt;&lt;/div&gt;&lt;div&gt;&lt;span style=&quot;background-color: initial;&quot;&gt;&amp;nbsp;+ font PFont;&amp;nbsp;&lt;/span&gt;&lt;/div&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="25" y="54" width="197" height="216" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-44" value="&amp;nbsp;+void setup ();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void draw ();&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp;+void back ();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void game ();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void gameOver ();&lt;br&gt;&amp;nbsp;+void victory ();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void keyPressed()" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="32" y="180" width="190" height="120" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-44" value="&amp;nbsp;+ setup ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ draw ( )&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp;+ back ( )&lt;br&gt;&amp;nbsp;+ game ( )&lt;br&gt;&amp;nbsp;+ gameOver ( )&lt;br&gt;&amp;nbsp;+ victory ( )&lt;br&gt;&amp;nbsp;+ keyPressed ( )&lt;br&gt;&amp;nbsp;+ keyReleased ( )&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="25" y="270" width="197" height="120" as="geometry" />
         </mxCell>
         <mxCell id="Bj3Egmkld3hF2YVUXplE-48" value="Kernel" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
-          <mxGeometry x="840" y="24" width="250" height="30" as="geometry" />
+          <mxGeometry x="795" y="24" width="295" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-49" value="&amp;nbsp;-float[][] Kernel;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="840" y="54" width="250" height="30" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-49" value="&amp;nbsp;- Kernel : float [ ] [ ]" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="795" y="54" width="295" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-50" value="&amp;nbsp;+Kernel ();&lt;br&gt;&amp;nbsp;+color calcNewColor(PImage sor, int x, int y);&amp;nbsp;&lt;br&gt;&amp;nbsp;+void apply(Pimage source, Pimage dest);&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="840" y="84" width="250" height="60" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-50" value="&amp;nbsp;+ calcNewColor (img : PImage, x : int, y : int) : color&amp;nbsp; &lt;br&gt;&amp;nbsp;+ apply (source : Pimage,&amp;nbsp; dest : PImage)&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="795" y="84" width="295" height="46" as="geometry" />
         </mxCell>
         <mxCell id="Bj3Egmkld3hF2YVUXplE-52" value="Spaceship" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="417" y="144" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-53" value="&amp;nbsp;-PVector position;&amp;nbsp;&lt;br&gt;&amp;nbsp;+PVector velocity;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-53" value="&amp;nbsp;- position : PVector&amp;nbsp;&lt;br&gt;&amp;nbsp;- velocity : PVector&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="417" y="174" width="190" height="40" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-54" value="&amp;nbsp;+public Spaceship(float posx, float &lt;span style=&quot;white-space: pre;&quot;&gt; &lt;/span&gt;posy, float velx, float vely);&amp;nbsp;&lt;br&gt;&amp;nbsp;+void update();&amp;nbsp;&lt;br&gt;&amp;nbsp;+float getX();&lt;br&gt;&amp;nbsp;+float getY();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void updatePosX();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void updatePosY();&lt;br&gt;&amp;nbsp;+void show(float posx, float posx, int [][] sprite);&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="417" y="214" width="190" height="141" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-54" value="&amp;nbsp;+ update ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ getX ( ) : float&amp;nbsp;&lt;br&gt;&amp;nbsp;+ getY ( ) : float&amp;nbsp;&lt;br&gt;&amp;nbsp;+ updatePosY ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ updatePosX ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ updateVelocityX ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ shot (x : float, y : float, model :&amp;nbsp; &lt;br&gt;&amp;nbsp; &amp;nbsp; int [ ][ ])&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="417" y="214" width="190" height="131" as="geometry" />
         </mxCell>
         <mxCell id="Bj3Egmkld3hF2YVUXplE-59" value="Player" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="620" y="496" width="190" height="30" as="geometry" />
@@ -37,29 +37,29 @@
         <mxCell id="Bj3Egmkld3hF2YVUXplE-60" value="Enemy" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="215" y="496" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-62" value="&amp;nbsp;-int chanceOfShot;&amp;nbsp;&lt;br&gt;&amp;nbsp;-int life;&amp;nbsp;&lt;br&gt;&amp;nbsp;-Projectile b;&lt;br&gt;&amp;nbsp;+int[][] sprite;&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-62" value="&amp;nbsp;- chanceOfShot : int&amp;nbsp;&lt;br&gt;&amp;nbsp;- life : int&amp;nbsp;&lt;br&gt;&amp;nbsp;- b : Projectile&amp;nbsp;&lt;br&gt;&amp;nbsp;- model : int [ ][ ][ ]&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="215" y="526" width="190" height="64" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-63" value="&amp;nbsp;-int lives;&amp;nbsp;&lt;br&gt;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-63" value="&amp;nbsp;- int lives;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="620" y="526" width="190" height="30" as="geometry" />
         </mxCell>
         <mxCell id="Bj3Egmkld3hF2YVUXplE-66" value="Projectile" style="rounded=0;whiteSpace=wrap;html=1;" parent="1" vertex="1">
           <mxGeometry x="417" y="496" width="190" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-67" value="&amp;nbsp;+Enemy (float xpos, float ypos)&lt;br&gt;&amp;nbsp;-void shoot();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void update();&amp;nbsp;&lt;br&gt;&amp;nbsp;-void show();&lt;br&gt;&amp;nbsp;-void die();&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="215" y="590" width="190" height="80" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-67" value="&amp;nbsp;+ update ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ shoot ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ die ( )&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="215" y="590" width="190" height="60" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-69" value="&amp;nbsp;+Player (float posx, float posy,)&lt;br&gt;&amp;nbsp;+void update ();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void keyPressed();&amp;nbsp;&lt;br&gt;&amp;nbsp;+int getLives();&amp;nbsp;&lt;br&gt;&amp;nbsp;-void show();&amp;nbsp;&lt;br&gt;&amp;nbsp;-void shoot();&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="620" y="556" width="190" height="90" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-69" value="&amp;nbsp;+ update ( )&amp;nbsp;&lt;br&gt;&amp;nbsp;+ keyPressed ( )&amp;nbsp;&amp;nbsp;&lt;br&gt;&amp;nbsp;+ getLives ( ) : int&amp;nbsp;&lt;br&gt;&amp;nbsp;+ shoot ( )&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="620" y="556" width="190" height="69" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-70" value="&amp;nbsp;-color col;&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-70" value="&amp;nbsp;- col : color&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
           <mxGeometry x="417" y="526" width="190" height="20" as="geometry" />
         </mxCell>
-        <mxCell id="Bj3Egmkld3hF2YVUXplE-72" value="&amp;nbsp;+Projectile(float posx, float posy, color col)&lt;br&gt;&amp;nbsp;+Projectile (Player ply);&amp;nbsp;&lt;br&gt;&amp;nbsp;+void update();&amp;nbsp;&lt;br&gt;&amp;nbsp;-void show();&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
-          <mxGeometry x="417" y="543" width="190" height="77" as="geometry" />
+        <mxCell id="Bj3Egmkld3hF2YVUXplE-72" value="&amp;nbsp;+void update();&amp;nbsp;&lt;br&gt;&amp;nbsp;+void show();&amp;nbsp;" style="rounded=0;whiteSpace=wrap;html=1;align=left;" parent="1" vertex="1">
+          <mxGeometry x="417" y="543" width="190" height="37" as="geometry" />
         </mxCell>
         <mxCell id="RNGTsWGLouqB5hKTwm0q-18" value="" style="strokeWidth=2;html=1;shape=mxgraph.flowchart.merge_or_storage;whiteSpace=wrap;direction=west;" parent="1" vertex="1">
-          <mxGeometry x="497" y="355" width="30" height="20" as="geometry" />
+          <mxGeometry x="497" y="345" width="30" height="20" as="geometry" />
         </mxCell>
         <mxCell id="RNGTsWGLouqB5hKTwm0q-24" value="" style="endArrow=none;html=1;rounded=0;exitX=0.5;exitY=0;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="RNGTsWGLouqB5hKTwm0q-18" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -73,7 +73,7 @@
             <mxPoint x="715" y="420" as="targetPoint" />
           </mxGeometry>
         </mxCell>
-        <mxCell id="RNGTsWGLouqB5hKTwm0q-35" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=0.997;exitY=0.195;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" target="Bj3Egmkld3hF2YVUXplE-53" edge="1" source="Bj3Egmkld3hF2YVUXplE-44">
+        <mxCell id="RNGTsWGLouqB5hKTwm0q-35" value="" style="endArrow=none;html=1;rounded=0;entryX=0;entryY=0.75;entryDx=0;entryDy=0;exitX=1;exitY=0.694;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="Bj3Egmkld3hF2YVUXplE-42" target="Bj3Egmkld3hF2YVUXplE-53" edge="1">
           <mxGeometry relative="1" as="geometry">
             <mxPoint x="225" y="204" as="sourcePoint" />
             <mxPoint x="382" y="220" as="targetPoint" />
