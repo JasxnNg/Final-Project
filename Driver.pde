@@ -1,6 +1,7 @@
 import processing.sound.*; 
 
-SoundFile projectileLaunch;
+//sound files 
+SoundFile projectileLaunch; 
 SoundFile playerCollision;
 SoundFile enemyCollision;
 
@@ -11,7 +12,7 @@ Kernel blur = new Kernel (new float[][] {
     }); 
 int score; 
 int size = 40; // size of each pixel 
-int stage = 0; 
+int stage = 0; //background 
 int highScore = 0; 
 int currentDiff; //current Difficulty 
 
@@ -19,7 +20,7 @@ ArrayList<Enemy> enemies;
 ArrayList<Projectile> projectiles; 
 Projectile bull; 
 Player play; 
-String[] difficulty;
+String[] difficulty; // like the car thing 
 PFont font;
 
 
@@ -31,12 +32,12 @@ void setup() {
   projectileLaunch = new SoundFile(this, "projectileLaunch.wav");
   playerCollision = new SoundFile(this,   "playerCollision.wav");
   enemyCollision = new SoundFile(this, "enemyCollision.wav");
-  enemies = new ArrayList<Enemy>(); 
-  projectiles = new ArrayList<Projectile>(); 
+  enemies = new ArrayList<Enemy>(); //intialize enemies arraylist 
+  projectiles = new ArrayList<Projectile>(); //projectiles (enemies') arraylist 
   for (int x = 1; x < 12; x++) 
     for (int y = 1; y < 5; y++) 
-      enemies.add (new Enemy (x * size + 100 * x, y * size + 40 * y)); 
-  play = new Player(1000, 1000); 
+      enemies.add (new Enemy (x * size + 100 * x, y * size + 40 * y)); //fill up the array
+  play = new Player(1000, 1000); //coords of start 
   score = 0;  
   difficulty = new String[] {"Easy", "Medium", "Hard"}; 
  
@@ -54,6 +55,7 @@ void draw() {
   keyPressed(); 
 }
 
+//create the background and display everything 
 void back(){ 
   background(255); 
   PImage original = loadImage("zidane.png"); 
@@ -71,8 +73,10 @@ void back(){
   textSize(50); 
   text ("Press Up or Down to ",  75, 300); 
   text ("switch through difficulty", 75, 400); 
-  text("Current Difficulty " + difficulty[currentDiff], 75, 500); 
+  text("Current Difficulty " + difficulty[currentDiff], 75, 500);
 }
+
+//playing the actual game 
 void game (){
   
   background(0); 
@@ -117,7 +121,6 @@ void keyPressed(){
   }
   if (key == 'q' || key == 'Q') {
     stage = 2; 
-
   
 }
 }
@@ -126,9 +129,18 @@ void keyReleased (){
     if (keyCode == UP) 
     currentDiff = (currentDiff + 1) % 3;  
   if (keyCode == DOWN) 
-    currentDiff = (currentDiff + 2) % 3; 
+    currentDiff = (currentDiff + 2) % 3;
 }
+// this is to demonstrate the loss 
+ if (key == 'p' || key == 'P') {
+    size = 100; 
+  }
+  
+  if (key == 'o' || key == 'O') 
+    size = 40; 
 }
+
+//victory screen 
 void victory () {
   background(0); 
   textSize(100);
@@ -139,7 +151,7 @@ void victory () {
 
   
 }
-
+// losing screen...
 void gameOver() { 
   background (0); 
   fill (0, 255, 0); 

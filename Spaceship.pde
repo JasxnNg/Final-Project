@@ -1,4 +1,5 @@
 public class Spaceship {
+  
   private PVector position; 
   private PVector velocity; 
   
@@ -20,9 +21,11 @@ public class Spaceship {
   
   public void updatePosY(float posit){
     this.position.y += posit; }
+    
   public void updatePosX(float posit){
     this.position.x+= posit;}
-    public void updateVelocityX(float posit){
+    
+  public void updateVelocityX(float posit){
     this.velocity.x *= posit; }
 
     

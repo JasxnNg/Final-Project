@@ -41,18 +41,15 @@ public class Enemy extends Spaceship{
    void update() {
     super.update();
     if(random(0, chanceOfShot) < 1){
-      shoot();
+      shoot(); // randomized shooting 
     }    
-      //if(this.getX() > width - 4 * size || this.getX() < 2 * size){
-      //  for(Enemy i: enemies){
-      //    i.velocity.x *= -1;
-      //    i.updatePosY(size/2);
-      // }
-      //} bad fix? need to change where it's a little scuffed and
-      // it's a little misaligned
+
+      
+      
    if(this.getY() > play.getY()){
       gameOver();
     }
+    
     //collision mechanics for this here 
     for (int i = 0; i < enemies.size(); i++) { // cannot use enhanced for-loop 
       if (bull != null && 
@@ -68,9 +65,13 @@ public class Enemy extends Spaceship{
        if (enemies.get(i).life < 1) 
          die(enemies.get(i)); 
        }
+       
     if (this.getY()  >= 1000) 
-      stage = 3; 
+      stage = 3; // if the enemies go past us 
+      
         }
+        
+        
      fill (80, 255, 80);
      if (this.life == 2) 
        super.show(this.getX(), this.getY(), model[0]); 
@@ -82,7 +83,7 @@ public class Enemy extends Spaceship{
    
    void shoot(){
      b = new Projectile(this.getX(), this.getY(), color (163, 31, 2)); 
-     projectiles.add(b); }
+     projectiles.add(b); } 
     
     
     void die(Enemy i ){
