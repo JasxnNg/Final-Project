@@ -147,7 +147,7 @@ void victory () {
   fill(0, 255, 0); 
   text("Hooray! You defeated the code!", width/2 - 500, height/2); 
   textSize(50);
-  text("Press E to start again", width/2 - 150, height/2 + 100); 
+  text("Press W to start again", width/2 - 150, height/2 + 100); 
 
   
 }
@@ -158,7 +158,7 @@ void gameOver() {
   textSize(100); 
   text ("Game Over. The code took over.", width/2 - 500, height/2 - 150); 
   textSize ( 50); 
-  text("Press E to start again", width/2 - 150, height/2); 
+  text("Press W to start again", width/2 - 150, height/2); 
   text ("Score " + score, width/2 - 75, height / 2 + 100); 
   text ("High Score " + highScore, width/2 - 75, height / 2 + 150);
   
