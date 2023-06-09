@@ -1,5 +1,5 @@
 
- private int chanceOfShot = 2000; 
+ private int chanceOfShot = 1200 * (currentDiff + 1); 
  
 public class Enemy extends Spaceship{ 
   private int life; 
@@ -56,11 +56,14 @@ public class Enemy extends Spaceship{
     //collision mechanics for this here 
     for (int i = 0; i < enemies.size(); i++) { // cannot use enhanced for-loop 
       if (bull != null && 
-          Math.abs(bull.getX() - enemies.get(i).getX()) < size   // its like a sphere for collisions 
-          && Math.abs(bull.getY() - enemies.get(i).getY())< size  ){
+          bull.getX() - enemies.get(i).getX() < size + 7 &&
+          bull.getX() - enemies.get(i).getX() > -2  && 
+          bull.getY() - enemies.get(i).getY() < size +7  &&  //the things are 45 units long 
+          bull.getY() - enemies.get(i).getY() >  -2 ){ //collision looks like a rectangle 
+       // lets make it a little easier! 
        bull = null; 
        enemies.get(i).life--;  
-       score += 10; //gets 10 points if you shoot 
+       score += 10 * (currentDiff + 1); //gets 10 points if you shoot 
        enemyCollision.play(); 
        if (enemies.get(i).life < 1) 
          die(enemies.get(i)); 
@@ -85,10 +88,10 @@ public class Enemy extends Spaceship{
     void die(Enemy i ){
       
       enemies.remove(i);
-      score += 40; //gets fifty total if they die  
+      score += 40 * (currentDiff + 1); //gets fifty total if they die  
     }
     
-    //void changeThing() {
+    //void changeThing() { It didn't work and now I'm really sad :- ( 
     //  if(this.getX() > width - 4 * size || this.getX() < 2 * size && change){
     //  for(Enemy i: enemies){
     //    i.velocity.x *= -1;

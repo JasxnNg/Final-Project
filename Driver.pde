@@ -13,17 +13,21 @@ int score;
 int size = 40; // size of each pixel 
 int stage = 0; 
 int highScore = 0; 
+int currentDiff; //current Difficulty 
 
 ArrayList<Enemy> enemies; 
 ArrayList<Projectile> projectiles; 
 Projectile bull; 
 Player play; 
+String[] difficulty;
+PFont font;
 
 
 
 void setup() {
   size (1920, 1280); 
   noStroke(); 
+  font = createFont("AFont.otf", 128); 
   projectileLaunch = new SoundFile(this, "projectileLaunch.wav");
   playerCollision = new SoundFile(this,   "playerCollision.wav");
   enemyCollision = new SoundFile(this, "enemyCollision.wav");
@@ -34,6 +38,8 @@ void setup() {
       enemies.add (new Enemy (x * size + 100 * x, y * size + 40 * y)); 
   play = new Player(1000, 1000); 
   score = 0;  
+  difficulty = new String[] {"Easy", "Medium", "Hard"}; 
+ 
 }
 
 void draw() { 
@@ -55,21 +61,21 @@ void back(){
   blur.apply(original,processedbackground); 
   image(processedbackground, 700, 0); 
   textSize(40); 
-  PFont font;
-  font = createFont("AFont.otf", 128); 
   textFont(font); 
   fill(0); 
-  text("Press X", 75, 100); 
+  text("Press E", 75, 100); 
   text("to Start", 75, 200);
   text("Four score and seven years ago,", 75, 1000); 
   text("the Codebenders attacked...", 75, 1100); 
-  text("Defeat the busted code!", 75, 1200);  
+  text("Defeat the busted code!", 75, 1200); 
+  textSize(50); 
+  text ("Press Up or Down to ",  75, 300); 
+  text ("switch through difficulty", 75, 400); 
+  text("Current Difficulty " + difficulty[currentDiff], 75, 500); 
 }
 void game (){
   
   background(0); 
-  PFont font = createFont("AFont.otf", 50);
-  textFont(font); 
   fill(255); 
   text ("Score " + score, 300, 50); 
   text("Lives " + play.getLives(), 700, 50); 
@@ -103,7 +109,7 @@ void game (){
   // setup the actual game 
 }
 void keyPressed(){
-  if (key== 'x' || key == 'X') 
+  if (key== 'e' || key == 'E') 
     stage = 1; 
   if (key == 'w' || key == 'W') {
     stage = 0;
@@ -111,32 +117,37 @@ void keyPressed(){
   }
   if (key == 'q' || key == 'Q') {
     stage = 2; 
-  }
+
   
 }
+}
+void keyReleased (){
+  if (stage == 0) { //it has to be the background stage in order to change difficulty 
+    if (keyCode == UP) 
+    currentDiff = (currentDiff + 1) % 3;  
+  if (keyCode == DOWN) 
+    currentDiff = (currentDiff + 2) % 3; 
+}
+}
 void victory () {
-  PImage original = loadImage("zidane.png"); 
-  PFont font;
-  font = createFont("AFont.otf", 128);
   background(0); 
   textSize(100);
   fill(0, 255, 0); 
   text("Hooray! You defeated the code!", width/2 - 500, height/2); 
   textSize(50);
-  text("Press W to start again", width/2 - 150, height/2 + 100); 
+  text("Press E to start again", width/2 - 150, height/2 + 100); 
+
   
 }
 
 void gameOver() { 
-  PFont font = createFont("AFont.otf", 128); 
-  textFont(font); 
   background (0); 
   fill (0, 255, 0); 
   textSize(100); 
   text ("Game Over. The code took over.", width/2 - 500, height/2 - 150); 
   textSize ( 50); 
-  text("Press W to start again", width/2 - 150, height/2); 
-   text ("Score " + score, width/2 - 75, height / 2 + 100); 
+  text("Press E to start again", width/2 - 150, height/2); 
+  text ("Score " + score, width/2 - 75, height / 2 + 100); 
   text ("High Score " + highScore, width/2 - 75, height / 2 + 150);
   
 }
